@@ -13,6 +13,7 @@ export function Header() {
         sm: true,
         md: false,
         lg: false,
+        xl: false
     });
 
     return (
@@ -27,7 +28,7 @@ export function Header() {
             zIndex="1000"
             left="50%"
             transform="translateX(-50%)"
-            boxShadow="0px 1px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(224, 227, 222, 0.5)"  // Adicionando sombra na parte inferior com a cor #E0E3DE
+            boxShadow="0px 1px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(224, 227, 222, 0.5)" 
 
         >
             <HStack
@@ -38,7 +39,7 @@ export function Header() {
                         cursor="pointer"
                         transition="transform 0.3s ease"
                         _hover={{
-                            transform: "scale(1.1)", // Escalar o botão para aumentar o tamanho
+                            transform: "scale(1.1)", 
                         }}
                     >
                         <Icon

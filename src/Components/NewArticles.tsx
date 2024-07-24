@@ -47,7 +47,7 @@ const StyledSwiper = styled(Swiper)`
 `;
 
 export function NewArticles() {
-    const isBaseOrSm = useBreakpointValue({ base: true, sm: true, md: false });
+    const isBaseOrSm = useBreakpointValue({ base: true, sm: true, md: false, lg: false, xl: false });
 
     return (
         <>
@@ -76,11 +76,8 @@ export function NewArticles() {
                     </StyledSwiper>
                 </Flex>
             ) : (
-                <Flex mt={200} gap={6} justify="center">
+                <Flex mt={200} gap={6} justify="center" maxW={1700}>
                     <Box
-                        // w="674px"
-                        // h="523px"
-
                         w={{ md: "488px", lg: "596px",xl: "674px" }}
                         h={{ md: "523px", lg: "523px" }}
                         bg="red"
@@ -91,16 +88,12 @@ export function NewArticles() {
 
                     <Flex direction="column" gap={6}>
                         <Box
-                            // w="476px"
-                            // h="252px"
                             w={{ md: "250px", lg: "358px", xl: "476px"}}
                             h={{ md: "252px", lg: "252px" }}
                             bg="red"
                             borderRadius="24px"
                         />
                         <Box
-                            // w="476px"
-                            // h="252px"
                             w={{ md: "250px", lg: "358px", xl:"476px"}}
                             h={{ md: "252px", lg: "252px" }}
                             bg="red"
