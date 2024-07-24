@@ -1,5 +1,6 @@
-import { Box, Button, Flex, HStack, Icon, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { Inter } from "next/font/google";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -61,6 +62,7 @@ export function OthersArticles() {
                                 fontWeight={400}
                                 fontSize="14px"
                                 lineHeight="22px"
+                                ml="6px"
                                 color="#191B18"
                             >50</Text>
                         </Flex>
@@ -90,9 +92,44 @@ export function OthersArticles() {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora non obcaecati hic corporis accusantium porro nulla nostrum beatae cum nesciunt ipsa, quisquam aliquam facilis vel officia, dolores illo voluptatem soluta.
                         </Text>
 
-                        <Button
-                            mt={{ base: 'none', sm: 2, md: 4, lg: 0 }}
-                        >Leia mais</Button>
+                        <Flex alignItems="center" mt={{ base: 'none', sm: 2, md: 4, lg: 0 }} justifyContent="flex-start" w="100%">
+                            <Button
+                                position="relative"
+                                bg='transparent'
+                                padding="0"
+                                h="24px"
+                                justifyContent="flex-start"
+                                _hover={{
+                                    _after: {
+                                        width: '100%',
+                                        transition: 'width 0.3s',
+                                    },
+                                }}
+                                _after={{
+                                    content: '""',
+                                    position: 'absolute',
+                                    width: '0',
+                                    height: '2px',
+                                    bottom: '0',
+                                    left: '0',
+                                    bg: '#005257',
+                                    transition: 'width 0.3s',
+                                }}
+                            >
+                                <Text
+                                    className={inter.className}
+                                    fontWeight={500}
+                                    fontSize="16px"
+                                    lineHeight="24px"
+                                    color="#005257"
+                                    textAlign="left"
+                                >
+                                    Leia mais
+                                </Text>
+                            </Button>
+                            <ArrowForwardIcon color="#005257" ml={3} boxSize={5} />
+                        </Flex>
+
                     </VStack>
                 </Box>
 
