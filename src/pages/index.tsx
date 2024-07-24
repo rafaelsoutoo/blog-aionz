@@ -1,10 +1,12 @@
-import { Flex } from "@chakra-ui/react";
+import {VStack } from "@chakra-ui/react";
 import { Header } from "@/Components/Header";
+import { NewArticles } from "@/Components/NewArticles";
 
-export default function Main() {
+export default function Index() {
   return (
-    <Flex>
+    <VStack >
       <Header/>
-    </Flex>
+      <NewArticles/>
+    </VStack>
   )
 }
