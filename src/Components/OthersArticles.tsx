@@ -27,7 +27,7 @@ export function OthersArticles() {
                 mt={30}
             >
                 <Box
-                    w={{ base: "333px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
+                    w={{ base: "260px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
                     h={{ base: "473px", sm: "473px", md: "490px" }}
                     borderRadius="32px"
                     bg="#FCFCF8"
@@ -139,7 +139,7 @@ export function OthersArticles() {
 
 
                 <Box
-                    w={{ base: "333px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
+                    w={{ base: "260px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
                     h={{ base: "473px", sm: "473px", md: "490px" }}
                     borderRadius="32px"
                     bg="#FCFCF8"
@@ -245,7 +245,7 @@ export function OthersArticles() {
                     </VStack>
                 </Box>
                 <Box
-                    w={{ base: "333px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
+                    w={{ base: "260px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
                     h={{ base: "473px", sm: "473px", md: "490px" }}
                     borderRadius="32px"
                     bg="#FCFCF8"
@@ -351,7 +351,7 @@ export function OthersArticles() {
                     </VStack>
                 </Box>
                 <Box
-                    w={{ base: "333px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
+                    w={{ base: "260px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
                     h={{ base: "473px", sm: "473px", md: "490px" }}
                     borderRadius="32px"
                     bg="#FCFCF8"
@@ -457,7 +457,7 @@ export function OthersArticles() {
                     </VStack>
                 </Box>
                 <Box
-                    w={{ base: "333px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
+                    w={{ base: "260px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
                     h={{ base: "473px", sm: "473px", md: "490px" }}
                     borderRadius="32px"
                     bg="#FCFCF8"
@@ -563,7 +563,7 @@ export function OthersArticles() {
                     </VStack>
                 </Box>
                 <Box
-                    w={{ base: "333px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
+                    w={{ base: "260px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
                     h={{ base: "473px", sm: "473px", md: "490px" }}
                     borderRadius="32px"
                     bg="#FCFCF8"
