@@ -4,6 +4,7 @@ import { NewArticles } from "@/Components/NewArticles";
 import { OthersArticles } from "@/Components/OthersArticles";
 import { Recommended } from "@/Components/Recommended";
 import { NewsLetter } from "@/Components/NewsLetter";
+import { Footer } from "@/Components/Footer";
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
       <OthersArticles/>
       <Recommended/>
       <NewsLetter/>
+      <Footer/>
     </VStack>
   )
 }
