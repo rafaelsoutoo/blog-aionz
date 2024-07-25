@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export function Recommended() {
     return (
-        <Flex mt={100} maxW={2200} w="100%" mb={100}>
+        <Flex mt={100} maxW={2300} w="100%">
             <Box
                 position="relative"
                 h="362px"
@@ -58,13 +58,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -78,13 +79,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -98,13 +100,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -118,13 +121,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -138,13 +142,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -158,13 +163,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -178,13 +184,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -198,13 +205,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -218,13 +226,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -238,13 +247,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -258,13 +268,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -278,13 +289,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -298,13 +310,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
@@ -318,13 +331,14 @@ export function Recommended() {
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                            >
+                                >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
                                     fontSize="16px"
                                     lineHeight="24px"
                                     color="#FFFFD4"
+                                    noOfLines={1}
                                 >
                                     #Topicos
                                 </Text>
