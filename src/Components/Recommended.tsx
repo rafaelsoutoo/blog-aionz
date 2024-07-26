@@ -8,7 +8,8 @@ export function Recommended() {
         <Flex mt={100} maxW={2300} w="100%">
             <Box
                 position="relative"
-                h="362px"
+                //h="362px"
+                h={{ base: "500px", sm: "400px", md: "362px", lg: "362px" }}
                 w="100%"
                 bg="#023535"
             >
@@ -30,7 +31,7 @@ export function Recommended() {
                     display="flex"
                     justifyContent="center"
                     alignItems="flex-start"
-                    mt="62px"
+                    mt={{base:"30px", sm: "45px", md: "62px", lg: "62px"}}
                 >
                     <VStack>
 
@@ -52,13 +53,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -73,13 +74,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -94,13 +95,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -115,13 +116,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -136,13 +137,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -157,13 +158,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -178,13 +179,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -199,13 +200,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -220,13 +221,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -241,13 +242,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -262,13 +263,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -283,13 +284,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -304,13 +305,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}
@@ -325,13 +326,13 @@ export function Recommended() {
                             <Button
                                 borderRadius="24px"
                                 w={{ base: "120px", sm: "140px", md: "166px" }}
-                                h={{ base: "25px", sm: "32px", md: "40px" }}
+                                h="40px"
                                 bg="rgba(255, 255, 212, 0.1)"
                                 padding="4px 16px"
                                 _hover={{
                                     bg: "rgba(255, 255, 212, 0.200)",
                                 }}
-                                >
+                            >
                                 <Text
                                     className={inter.className}
                                     fontWeight={400}

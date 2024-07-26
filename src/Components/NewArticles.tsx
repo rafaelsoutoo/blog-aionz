@@ -22,8 +22,10 @@ const StyledSwiper = styled(Swiper)`
         display: flex;
         justify-content: center;
         align-items: center;
-        width: auto;
-        height: 600px; 
+        width: 100%;  
+        height: 600px;
+
+
     }
 
     .swiper-slide-active {
@@ -37,12 +39,12 @@ const StyledSwiper = styled(Swiper)`
     .swiper-pagination-bullet {
         width: 10px;
         height: 10px;
-        background: #35363A;
+        background: #C5CAC5;
         opacity: 1;
     }
 
     .swiper-pagination-bullet-active {
-        background: #d60257;
+        background: #023535;
     }
 
 `;
@@ -67,14 +69,121 @@ export function NewArticles() {
                     >
                         <SwiperSlide >
                             <Box
-                                borderRadius="24px"
                                 w={{ base: "60%", sm: "50%" }}
                                 h={{ base: "350px", sm: "400px" }}
-                                rounded={10}
-                                boxShadow="3px 3px 3px #d60257"
                                 position="relative"
+                                borderRadius="24px"
                                 bg="gray.200"
-                            />
+                            >
+                                <Image
+                                    src="ImageTest.svg"
+                                    w="full"
+                                    h="full"
+                                    objectFit="cover"
+                                    position="absolute"
+                                    style={{ borderRadius: '24px' }}
+                                    draggable="false"
+                                />
+
+                                <Image
+                                    src="boxHome.svg"
+                                    w="full"
+                                    h="auto"
+                                    position="absolute"
+                                    bottom="0"
+                                    left="0"
+                                    style={{ borderRadius: '24px' }}
+                                    draggable="false"
+                                />
+
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    left="0"
+                                    w="full"
+                                    p={4}
+                                    textAlign="start"
+                                >
+                                    <Text
+                                        className={inter.className}
+                                        color="#FFFFD4"
+                                        fontWeight={700}
+                                        fontSize="20px"
+                                        lineHeight="32px"
+                                        noOfLines={4}
+
+                                    > 234234234adipisicing elit. Vitae neque facere expedita adipisci perferendis et unde fugit dignissimos accusantium soluta dolorem, voluptatibus quam ullam cupiditate reprehenderit. Sunt maiores quod accusamus!</Text>
+                                    <Text
+                                        className={inter.className}
+                                        color="#FCFCF8"
+                                        fontWeight={400}
+                                        fontSize="14px"
+                                        lineHeight="22px"
+                                        noOfLines={1}
+
+                                    >10 de Abril de 2024</Text>
+                                </Box>
+
+                            </Box>
+                        </SwiperSlide>
+                        <SwiperSlide >
+                            <Box
+                                w={{ base: "60%", sm: "50%" }}
+                                h={{ base: "350px", sm: "400px" }}
+                                position="relative"
+                                borderRadius="24px"
+                                bg="gray.200"
+                            >
+                                <Image
+                                    src="ImageTest.svg"
+                                    w="full"
+                                    h="full"
+                                    objectFit="cover"
+                                    position="absolute"
+                                    style={{ borderRadius: '24px' }}
+                                    draggable="false"
+                                />
+
+                                <Image
+                                    src="boxHome.svg"
+                                    w="full"
+                                    h="auto"
+                                    position="absolute"
+                                    bottom="0"
+                                    left="0"
+                                    style={{ borderRadius: '24px' }}
+                                    draggable="false"
+                                />
+
+                                <Box
+                                    position="absolute"
+                                    bottom="0"
+                                    left="0"
+                                    w="full"
+                                    p={4}
+                                    textAlign="start"
+                                >
+                                    <Text
+                                        className={inter.className}
+                                        color="#FFFFD4"
+                                        fontWeight={700}
+                                        fontSize="20px"
+                                        lineHeight="32px"
+                                        noOfLines={4}
+
+                                    >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae neque facere expedita adipisci perferendis et unde fugit dignissimos accusantium soluta dolorem, voluptatibus quam ullam cupiditate reprehenderit. Sunt maiores quod accusamus!</Text>
+                                    <Text
+                                        className={inter.className}
+                                        color="#FCFCF8"
+                                        fontWeight={400}
+                                        fontSize="14px"
+                                        lineHeight="22px"
+                                        noOfLines={1}
+
+                                    >10 de Abril de 2024</Text>
+                                </Box>
+
+                            </Box>
                         </SwiperSlide>
 
                     </StyledSwiper>
@@ -94,6 +203,7 @@ export function NewArticles() {
                             h="full"
                             objectFit="cover"
                             position="absolute"
+                            draggable="false"
                         />
 
                         <Image
@@ -103,6 +213,7 @@ export function NewArticles() {
                             position="absolute"
                             bottom="0"
                             left="0"
+                            draggable="false"
                         />
 
                         <Box
@@ -119,9 +230,9 @@ export function NewArticles() {
                                 fontWeight={700}
                                 fontSize="20px"
                                 lineHeight="32px"
-                                noOfLines={2}
+                                noOfLines={4}
 
-                            >loreasidasoibdiuoabsdaosihdioahbsdiobaoibdssobdfisbd</Text>
+                            >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae neque facere expedita adipisci perferendis et unde fugit dignissimos accusantium soluta dolorem, voluptatibus quam ullam cupiditate reprehenderit. Sunt maiores quod accusamus!</Text>
                             <Text
                                 className={inter.className}
                                 color="#FCFCF8"
@@ -151,6 +262,7 @@ export function NewArticles() {
                                 h="full"
                                 objectFit="cover"
                                 position="absolute"
+                                draggable="false"
                             />
 
                             <Image
@@ -160,6 +272,7 @@ export function NewArticles() {
                                 position="absolute"
                                 bottom="0"
                                 left="0"
+                                draggable="false"
                             />
 
                             <Box
@@ -176,16 +289,16 @@ export function NewArticles() {
                                     fontWeight={700}
                                     fontSize="20px"
                                     lineHeight="32px"
-                                    noOfLines={2}
+                                    noOfLines={3}
 
-                                >loreasidasoibdiuoabsdaosihdioahbsdiobaoibdssobdfisbd</Text>
+                                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quam pariatur maiores accusantium suscipit maxime nobis, ipsam delectus enim, vero, odio dolore est quasi commodi. Id sunt neque debitis voluptas.</Text>
                                 <Text
                                     className={inter.className}
                                     color="#FCFCF8"
                                     fontWeight={400}
                                     fontSize="14px"
                                     lineHeight="22px"
-                                    noOfLines={1}
+                                    noOfLines={3}
 
                                 >10 de Abril de 2024</Text>
                             </Box>
@@ -203,6 +316,7 @@ export function NewArticles() {
                                 h="full"
                                 objectFit="cover"
                                 position="absolute"
+                                draggable="false"
                             />
                             <Image
                                 src="boxHome.svg"
@@ -211,6 +325,7 @@ export function NewArticles() {
                                 position="absolute"
                                 bottom="0"
                                 left="0"
+                                draggable="false"
                             />
 
                             <Box

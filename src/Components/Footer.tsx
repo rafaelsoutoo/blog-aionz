@@ -182,10 +182,10 @@ export function Footer() {
                             </Flex>
 
                             <Flex direction="column" gap={2}>
-                                <HStack>
+                                <HStack >
 
 
-                                    <Image src="WhatsIcon.svg" />
+                                    <Image src="WhatsIcon.svg"  />
                                     <Text _hover={{ color: "#29e529" }} cursor="default" mb={{ base: 5, sm: 5, md: 0, lg: 0 }} className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC">Fale com a equipe</Text>
                                 </HStack>
                             </Flex>
