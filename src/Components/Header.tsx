@@ -2,6 +2,7 @@ import { Box, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerHeader
 import { Inter } from 'next/font/google'
 import { ArrowBackIcon, HamburgerIcon, SearchIcon } from "@chakra-ui/icons";
 import { SideBar } from "./SideBar";
+import { useEffect, useState } from "react";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,6 +17,27 @@ export function Header() {
         xl: false
     });
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            if (currentScrollY > scrollPosition) {
+                setIsHeaderVisible(false);
+            } else {
+                setIsHeaderVisible(true);
+            }
+            setScrollPosition(currentScrollY);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [scrollPosition]);
+
+
     return (
         <Box
             bgColor="#FCFCF8"
@@ -26,10 +48,10 @@ export function Header() {
             maxW={2300}
             alignItems="center"
             zIndex="1000"
-            left="50%"
-            transform="translateX(-50%)"
+            // left="50%"
+            transform={`translateY(${isHeaderVisible ? '0' : '-100%'})`}
             boxShadow="0px 1px rgba(0, 0, 0, 0.1), 0px 4px 8px rgba(224, 227, 222, 0.5)" 
-
+            transition="transform 0.4s ease"
         >
             <HStack
                 justifyContent="space-between" h="100%" alignItems="center" mx={{ base: 'none', sm: 'none', md: '100px', lg: '120px', xl: '230px' }}

@@ -59,7 +59,9 @@ export function NewArticles() {
     const isBaseOrSm = useBreakpointValue({ base: true, sm: true, md: false, lg: false, xl: false });
 
     const [articles, setArticles] = useState<ArticleDTO[]>([]);
-    const [page, setPage] = useState(1)
+    const [page] = useState(1)
+
+
 
 
     useEffect(() => {
@@ -70,7 +72,7 @@ export function NewArticles() {
                 const recentArticles = sortedArticles.slice(0, 3);
                 setArticles(recentArticles);
             } catch (error) {
-                console.error("Failed to fetch articles", error);
+                console.error( error);
             }
         };
         fetchArticles();
