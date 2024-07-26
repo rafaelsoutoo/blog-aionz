@@ -2,6 +2,8 @@
   "name": "blog-aionz",
   "version": "0.1.0",
   "private": true,
+  "author": "Rafael Souto <rafaelsouto70017@gmail.com>",
+  "description": "Blog para Aionz",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
