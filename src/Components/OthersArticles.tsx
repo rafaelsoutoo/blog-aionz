@@ -152,6 +152,7 @@ export function OthersArticles() {
                                 lineHeight="28px"
                                 color="#023535"
                                 textAlign="left"
+                                minHeight="56px"
                             >
                                 {article.title}
                             </Text>
