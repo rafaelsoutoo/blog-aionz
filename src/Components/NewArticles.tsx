@@ -1,4 +1,4 @@
-import { Box, Flex, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 
@@ -14,6 +14,7 @@ import {
     Keyboard,
     Autoplay,
 } from 'swiper/modules';
+import { Inter } from "next/font/google";
 
 const StyledSwiper = styled(Swiper)`
     .swiper-slide {
@@ -45,6 +46,9 @@ const StyledSwiper = styled(Swiper)`
     }
 
 `;
+
+const inter = Inter({ subsets: ["latin"] });
+
 
 export function NewArticles() {
     const isBaseOrSm = useBreakpointValue({ base: true, sm: true, md: false, lg: false, xl: false });
@@ -78,26 +82,166 @@ export function NewArticles() {
             ) : (
                 <Flex mt={200} gap={6} justify="center" maxW={1700}>
                     <Box
-                        w={{ md: "488px", lg: "596px",xl: "674px" }}
+                        w={{ md: "488px", lg: "596px", xl: "674px" }}
                         h={{ md: "523px", lg: "523px" }}
-                        bg="red"
                         borderRadius="24px"
-                    />
+                        position="relative"
+                        overflow="hidden"
+                    >
+                        <Image
+                            src="ImageTest.svg"
+                            w="full"
+                            h="full"
+                            objectFit="cover"
+                            position="absolute"
+                        />
 
-                    
+                        <Image
+                            src="boxHome.svg"
+                            w="full"
+                            h="auto"
+                            position="absolute"
+                            bottom="0"
+                            left="0"
+                        />
+
+                        <Box
+                            position="absolute"
+                            bottom="0"
+                            left="0"
+                            w="full"
+                            p={4}
+                            textAlign="start"
+                        >
+                            <Text
+                                className={inter.className}
+                                color="#FFFFD4"
+                                fontWeight={700}
+                                fontSize="20px"
+                                lineHeight="32px"
+                                noOfLines={2}
+
+                            >loreasidasoibdiuoabsdaosihdioahbsdiobaoibdssobdfisbd</Text>
+                            <Text
+                                className={inter.className}
+                                color="#FCFCF8"
+                                fontWeight={400}
+                                fontSize="14px"
+                                lineHeight="22px"
+                                noOfLines={1}
+
+                            >10 de Abril de 2024</Text>
+                        </Box>
+
+                    </Box>
+
+
 
                     <Flex direction="column" gap={6}>
                         <Box
-                            w={{ md: "250px", lg: "358px", xl: "476px"}}
-                            h={{ md: "252px", lg: "252px" }}
-                            bg="red"
+                            w={{ md: "250px", lg: "358px", xl: "476px" }}
+                            h={{ md: "252px", lg: "250px" }}
                             borderRadius="24px"
-                        />
+                            position="relative"
+                            overflow="hidden"
+                        >
+                            <Image
+                                src="ImageTest.svg"
+                                w="full"
+                                h="full"
+                                objectFit="cover"
+                                position="absolute"
+                            />
+
+                            <Image
+                                src="boxHome.svg"
+                                w="full"
+                                h="auto"
+                                position="absolute"
+                                bottom="0"
+                                left="0"
+                            />
+
+                            <Box
+                                position="absolute"
+                                bottom="0"
+                                left="0"
+                                w="full"
+                                p={4}
+                                textAlign="start"
+                            >
+                                <Text
+                                    className={inter.className}
+                                    color="#FFFFD4"
+                                    fontWeight={700}
+                                    fontSize="20px"
+                                    lineHeight="32px"
+                                    noOfLines={2}
+
+                                >loreasidasoibdiuoabsdaosihdioahbsdiobaoibdssobdfisbd</Text>
+                                <Text
+                                    className={inter.className}
+                                    color="#FCFCF8"
+                                    fontWeight={400}
+                                    fontSize="14px"
+                                    lineHeight="22px"
+                                    noOfLines={1}
+
+                                >10 de Abril de 2024</Text>
+                            </Box>
+                        </Box>
                         <Box
-                            w={{ md: "250px", lg: "358px", xl:"476px"}}
-                            h={{ md: "252px", lg: "252px" }}
-                            bg="red"
-                            borderRadius="24px" />
+                            w={{ md: "250px", lg: "358px", xl: "476px" }}
+                            h={{ md: "252px", lg: "250px" }}
+                            borderRadius="24px"
+                            position="relative"
+                            overflow="hidden"
+                        >
+                            <Image
+                                src="ImageTest.svg"
+                                w="full"
+                                h="full"
+                                objectFit="cover"
+                                position="absolute"
+                            />
+                            <Image
+                                src="boxHome.svg"
+                                w="full"
+                                h="auto"
+                                position="absolute"
+                                bottom="0"
+                                left="0"
+                            />
+
+                            <Box
+                                position="absolute"
+                                bottom="0"
+                                left="0"
+                                w="full"
+                                p={4}
+                                textAlign="start"
+                            >
+                                <Text
+                                    className={inter.className}
+                                    color="#FFFFD4"
+                                    fontWeight={700}
+                                    fontSize="20px"
+                                    lineHeight="32px"
+                                    noOfLines={2}
+
+                                >loreasidasoibdiuoabsdaosihdioahbsdiobaoibdssobdfisbd</Text>
+                                <Text
+                                    className={inter.className}
+                                    color="#FCFCF8"
+                                    fontWeight={400}
+                                    fontSize="14px"
+                                    lineHeight="22px"
+                                    noOfLines={1}
+
+                                >10 de Abril de 2024</Text>
+                            </Box>
+
+                        </Box>
                     </Flex>
                 </Flex>
             )}

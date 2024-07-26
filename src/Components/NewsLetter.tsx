@@ -1,9 +1,40 @@
-import { Button, Flex, Image, Input, SimpleGrid, Text, Box } from "@chakra-ui/react";
+import { Button, Flex, Image, Input, SimpleGrid, Text, Box, useToast } from "@chakra-ui/react";
 import { Inter } from "next/font/google";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export function NewsLetter() {
+
+    const toast = useToast()
+    const [email, setEmail] = useState('');
+
+    const validate = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+
+    const handleSubscribe = () => {
+        const val = validate(email)
+        if (email && val === true) {
+            toast({
+                title: 'E-mail enviado com sucesso.',
+                description: email,
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            });
+            setEmail('');
+        } else {
+            toast({
+                title: 'Erro ao enviar e-mail.',
+                description: 'Por favor, insira um e-mail válido.',
+                status: 'error',
+                duration: 6000,
+                isClosable: true,
+            });
+        }
+    };
+
+
     return (
         <Flex mt={100} maxW={1700} mb={100} direction="column" alignItems="center">
             <SimpleGrid
@@ -32,7 +63,6 @@ export function NewsLetter() {
                     <Input
                         className={inter.className}
                         w={{base: "300px", sm: "386px", md:"300px", lg: "386px"}}
-
                         h="56px"
                         borderRadius="40px"
                         placeholder="Insira seu e-mail"
@@ -48,6 +78,10 @@ export function NewsLetter() {
                         pl="24px"
                         mb={{ base: "16px", md: "0px" }}
                         mr={{ base: "0px", md: "4px" }}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+
+
                     />
                     <Button
                         w={{base: "300px", sm: "386px", md:"170px", lg: "179px"}}
@@ -55,6 +89,7 @@ export function NewsLetter() {
                         borderRadius="140px"
                         bg="#005257"
                         _hover={{ bg: "#023535" }}
+                        onClick={handleSubscribe}
                     >
                         <Text
                             className={inter.className}

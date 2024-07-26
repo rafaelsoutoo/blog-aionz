@@ -89,6 +89,7 @@ export function Footer() {
                         <Image
                             src="ButtonBack.svg"
                             alt="voltar imagem"
+                            _hover={{ filter: "brightness(0) saturate(100%) invert(36%) sepia(60%) saturate(700%) hue-rotate(84deg) brightness(92%) contrast(101%)" }}
                         />
                     </Flex>
                 </SimpleGrid>
@@ -121,10 +122,10 @@ export function Footer() {
                             </Flex>
 
                             <Flex direction="column" gap={2}>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Sobre Nós</Text>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Contato</Text>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Parceria comercial</Text>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Trabalhe conosco</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Sobre Nós</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Contato</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Parceria comercial</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Trabalhe conosco</Text>
                                 <Text mb={{ base: 5, sm: 5, md: 0, lg: 0 }} className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC">Fale com a equipe</Text>
                             </Flex>
                         </Box>
@@ -142,9 +143,9 @@ export function Footer() {
                             </Flex>
 
                             <Flex direction="column" gap={2}>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Z Club</Text>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">CX Corp</Text>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Produto 3</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Z Club</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">CX Corp</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Produto 3</Text>
                                 <Text mb={{ base: 5, sm: 5, md: 0, lg: 0 }} className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC">Produto 4</Text>
                             </Flex>
                         </Box>
@@ -162,8 +163,8 @@ export function Footer() {
                             </Flex>
 
                             <Flex direction="column" gap={2}>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Linkedin</Text>
-                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{color: "#29e529"}} cursor="default">Instagram</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Linkedin</Text>
+                                <Text className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC" _hover={{ color: "#29e529" }} cursor="default">Instagram</Text>
                                 <Text mb={{ base: 5, sm: 5, md: 0, lg: 0 }} className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC">Facebook</Text>
                             </Flex>
                         </Box>
@@ -184,8 +185,8 @@ export function Footer() {
                                 <HStack>
 
 
-                                <Image  src="WhatsIcon.svg"/>
-                                <Text  _hover={{color: "#29e529"}} cursor="default" mb={{ base: 5, sm: 5, md: 0, lg: 0 }} className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC">Fale com a equipe</Text>
+                                    <Image src="WhatsIcon.svg" />
+                                    <Text _hover={{ color: "#29e529" }} cursor="default" mb={{ base: 5, sm: 5, md: 0, lg: 0 }} className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC">Fale com a equipe</Text>
                                 </HStack>
                             </Flex>
                         </Box>
@@ -260,9 +261,9 @@ export function Footer() {
                             Políticas de Privacidade
                         </Text>
                         <Flex order={{ base: -1, lg: 0 }} >
-                            <Image src="IconInstagram.svg" alt="Icon instagram" />
-                            <Image src="IconLinkedin.svg" alt="Icon linkedin" />
-                            <Image src="IconFacebook.svg" alt="Icon facebook" />
+                            <Image src="IconInstagram.svg" alt="Icon instagram" _hover={{ filter: "brightness(0) saturate(100%) invert(36%) sepia(60%) saturate(700%) hue-rotate(84deg) brightness(92%) contrast(101%)" }} />
+                            <Image src="IconLinkedin.svg" alt="Icon linkedin" _hover={{ filter: "brightness(0) saturate(100%) invert(36%) sepia(60%) saturate(700%) hue-rotate(84deg) brightness(92%) contrast(101%)" }} />
+                            <Image src="IconFacebook.svg" alt="Icon facebook" _hover={{ filter: "brightness(0) saturate(100%) invert(36%) sepia(60%) saturate(700%) hue-rotate(84deg) brightness(92%) contrast(101%)" }} />
                         </Flex>
                     </Flex>
 
