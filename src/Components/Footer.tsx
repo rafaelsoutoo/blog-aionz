@@ -4,6 +4,13 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export function Footer() {
+
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      };
     return (
         <Flex maxW={2300} direction="column">
             <Image
@@ -85,6 +92,7 @@ export function Footer() {
                         alignItems="center"
                         w="auto"
                         cursor="pointer"
+                        onClick={scrollToTop} 
                     >
                         <Image
                             src="ButtonBack.svg"
