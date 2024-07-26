@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Flex, Image, Text, useBreakpointValue, useToast, Spinner } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
 
@@ -7,11 +7,11 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import { Pagination, } from 'swiper/modules';
+import { Pagination } from 'swiper/modules';
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { ArticleDTO } from "@/dtos/ArticleDTO";
-import { getArticles } from "@/services/articlesService";
+import api from "@/services/api";
 
 const StyledSwiper = styled(Swiper)`
     .swiper-slide {
@@ -21,9 +21,6 @@ const StyledSwiper = styled(Swiper)`
         align-items: center;
         width: 100%;  
         height: 600px;
-        
-
-
     }
 
     .swiper-slide-active {
@@ -44,38 +41,48 @@ const StyledSwiper = styled(Swiper)`
     .swiper-pagination-bullet-active {
         background: #023535;
     }
-
 `;
 
 const inter = Inter({ subsets: ["latin"] });
 
-
 export function NewArticles() {
     const isBaseOrSm = useBreakpointValue({ base: true, sm: true, md: false, lg: false, xl: false });
-
     const [articles, setArticles] = useState<ArticleDTO[]>([]);
-    const [page] = useState(1)
+    const [isLoading, setIsLoading] = useState(true);
+    const toast = useToast();
 
-
-
+    async function fetchRecentArticlis() {
+        try {
+            setIsLoading(true);
+            const response = await api.get('/posts?page=1');
+            const allArticles: ArticleDTO[] = response.data;
+            const articles = allArticles.sort((a: ArticleDTO, b: ArticleDTO) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+            const newArticles = articles.slice(0, 3);
+            setArticles(newArticles);
+        } catch (error) {
+            console.log(error);
+            toast({
+                title: 'Erro ao carregar os artigos',
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            });
+        } finally {
+            setIsLoading(false);
+        }
+    }
 
     useEffect(() => {
-        const fetchArticles = async () => {
-            try {
-                const allArticles = await getArticles(page, 10000);
-                const sortedArticles = allArticles.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-                const recentArticles = sortedArticles.slice(0, 3);
-                setArticles(recentArticles);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchArticles();
-    }, [page]);
+        fetchRecentArticlis();
+    }, []);
 
     return (
         <>
-            {isBaseOrSm ? (
+            {isLoading ? (
+                <Flex justify="center" align="center" height="100vh">
+                    <Spinner size="xl" />
+                </Flex>
+            ) : isBaseOrSm ? (
                 <Flex mt={100} width="100%" justify="center">
                     <StyledSwiper
                         pagination={true}
@@ -85,9 +92,8 @@ export function NewArticles() {
                         spaceBetween={5}
                         style={{ width: "100%", height: 'auto' }}
                     >
-
-                        {articles.map((article) => (
-                            <SwiperSlide >
+                        {articles.map((article, index) => (
+                            <SwiperSlide key={index}>
                                 <Box
                                     w={{ base: "60%", sm: "50%" }}
                                     h={{ base: "350px", sm: "400px" }}
@@ -104,7 +110,6 @@ export function NewArticles() {
                                         style={{ borderRadius: '24px' }}
                                         draggable="false"
                                     />
-
                                     <Image
                                         src="boxHome.svg"
                                         w="full"
@@ -115,7 +120,6 @@ export function NewArticles() {
                                         style={{ borderEndEndRadius: '24px', borderEndStartRadius: '24px' }}
                                         draggable="false"
                                     />
-
                                     <Box
                                         position="absolute"
                                         bottom="0"
@@ -131,7 +135,6 @@ export function NewArticles() {
                                             fontSize="20px"
                                             lineHeight="32px"
                                             noOfLines={4}
-
                                         >
                                             {article.title}
                                         </Text>
@@ -142,15 +145,13 @@ export function NewArticles() {
                                             fontSize="14px"
                                             lineHeight="22px"
                                             noOfLines={1}
-
-                                        >{new Date(article.createdAt).toLocaleDateString()}</Text>
+                                        >
+                                            {new Date(article.createdAt).toLocaleDateString()}
+                                        </Text>
                                     </Box>
-
                                 </Box>
                             </SwiperSlide>
                         ))}
-
-
                     </StyledSwiper>
                 </Flex>
             ) : (

@@ -1,25 +1,35 @@
 import { useEffect, useState } from 'react';
-import { Box, Button, Flex, Image, SimpleGrid, Text, VStack, Spinner } from '@chakra-ui/react';
-import { getTopics } from '@/services/topicsService'; 
+import { Box, Button, Flex, Image, SimpleGrid, Text, VStack, Spinner, useToast } from '@chakra-ui/react';
 import { TopicDTO } from '../dtos/TopicDTO';
+import api from '@/services/api';
 
 export function Recommended() {
   const [topics, setTopics] = useState<TopicDTO[]>([]);
-  const [loading, setLoading] = useState<boolean>(true); 
-  const [error, setError] = useState<string | null>(null); 
+  const [isLoading, setIsLoading] = useState(true)
+  const toast = useToast();
+
+
+  async function fetchTopics() {
+    try {
+      setIsLoading(true);
+      const response = await api.get('/topics');
+      const topics = response.data
+      setTopics(topics)
+
+    } catch (error) {
+      console.log(error);
+      toast({
+        title: 'Erro ao carregar os tópicos',
+        status: 'error',
+        duration: 5000,
+        isClosable: true,
+      });
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   useEffect(() => {
-    const fetchTopics = async () => {
-      try {
-        const fetchedTopics = await getTopics();
-        setTopics(fetchedTopics);
-      } catch (error) {
-        setError('Failed to fetch topics.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchTopics();
   }, []);
 
@@ -60,15 +70,13 @@ export function Recommended() {
             >
               Tópicos recomendados
             </Text>
-            {loading ? (
+            {isLoading ? (
               <Spinner
                 speed="0.65s"
-                emptyColor="green.200"
+                emptyColor="green.400"
                 size="xl"
-                mt={10}
+                mt={16}
               />
-            ) : error ? (
-              <Text color="red.500">{error}</Text>
             ) : (
               <SimpleGrid
                 mt="30px"

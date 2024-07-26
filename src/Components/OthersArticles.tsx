@@ -1,46 +1,80 @@
 import React, { useState, useEffect } from 'react';
-import { Flex, Box, Text, Button, SimpleGrid, Image, VStack, HStack, Spinner } from '@chakra-ui/react';
+import { Flex, Box, Text, Button, SimpleGrid, Image, VStack, HStack, Spinner, useToast } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { getArticles } from '@/services/articlesService';
-import { ArticleDTO } from '@/dtos/ArticleDTO';
 import { Inter } from 'next/font/google';
+import api from '@/services/api';
+import { ArticleDTO } from '@/dtos/ArticleDTO';
 
 const inter = Inter({ subsets: ["latin"] });
-
 
 export function OthersArticles() {
     const [articles, setArticles] = useState<ArticleDTO[]>([]);
     const [page, setPage] = useState(1);
-    const [loading, setLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
     const [showMore, setShowMore] = useState(false);
+    const toast = useToast();
 
+    async function fetchInitialArticles(limit: number) {
+        try {
+            setIsLoading(true);
+            const response = await api.get(`/posts`, {
+                params: {
+                    page: 1,
+                    limit
+                }
+            });
+            const fetchedArticles = response.data;
+            setArticles(fetchedArticles);
+            setPage(1);
+        } catch (error) {
+            toast({
+                title: 'Erro ao carregar os artigos',
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            });
+        } finally {
+            setIsLoading(false);
+        }
+    }
+
+    async function loadMoreArticles() {
+        setIsLoadingMore(true);
+        try {
+            const response = await api.get(`/posts`, {
+                params: {
+                    page: page + 1,
+                    limit: 6
+                }
+            });
+
+            const moreArticles = response.data;
+            setArticles((prevArticles) => [...prevArticles, ...moreArticles]);
+            setPage(page + 1);
+        } catch (error) {
+            console.error(error);
+            toast({
+                title: 'Erro ao carregar mais artigos',
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            });
+        } finally {
+            setIsLoadingMore(false);
+        }
+    }
 
     useEffect(() => {
-        loadInitialArticles();
+        fetchInitialArticles(6);
     }, []);
-
-    const loadInitialArticles = async () => {
-        setLoading(true);
-        const initialArticles = await getArticles(1, 6);
-        setArticles(initialArticles);
-        setLoading(false);
-        setPage(2);
-    };
-
-    const loadMoreArticles = async () => {
-        setLoading(true);
-        const moreArticles = await getArticles(page, 6);
-        setArticles((prevArticles) => [...prevArticles, ...moreArticles]);
-        setLoading(false);
-        setPage((prevPage) => prevPage + 1);
-        setShowMore(true);
-
-    };
 
     const showLessArticles = () => {
         setArticles(articles.slice(0, 6));
+        setPage(1);
         setShowMore(false);
     };
+
 
     return (
         <Flex mt={100} maxW={1700} w="100%" direction="column" alignItems="center">
@@ -57,6 +91,7 @@ export function OthersArticles() {
                 </Text>
             </Flex>
 
+
             <SimpleGrid
                 columns={{ base: 1, sm: 1, md: 2, lg: 3, xl: 3 }}
                 spacing={30}
@@ -66,7 +101,6 @@ export function OthersArticles() {
                     <Box
                         key={article.id}
                         w={{ base: "260px", sm: "333px", md: "340px", lg: "300px", xl: "370px" }}
-                        //h={{ base: "473px", sm: "473px", md: "490px" }}
                         minH="473px"
                         h="full"
                         borderRadius="32px"
@@ -183,10 +217,32 @@ export function OthersArticles() {
                     </Box>
                 ))}
             </SimpleGrid>
-            {loading && <Spinner size="lg" mt={4} />}
+            {isLoadingMore && <Spinner size="lg" mt={10} />}
 
             <Flex mt={10} direction="column" alignItems="center">
-                {!showMore ? (
+                <Button
+                    w="163px"
+                    h="56px"
+                    borderRadius="140px"
+                    borderWidth={1}
+                    bg="white"
+                    borderColor="#005257"
+                    _focus={{ bg: "white" }}
+                    onClick={loadMoreArticles}
+                    disabled={isLoadingMore}
+                    mb={4}
+                >
+                    <Text
+                        className={inter.className}
+                        fontWeight={500}
+                        fontSize="16px"
+                        lineHeight="24px"
+                        color="#005257"
+                    >
+                        Ver mais
+                    </Text>
+                </Button>
+                {articles.length > 6 && (
                     <Button
                         w="163px"
                         h="56px"
@@ -195,8 +251,7 @@ export function OthersArticles() {
                         bg="white"
                         borderColor="#005257"
                         _focus={{ bg: "white" }}
-                        onClick={loadMoreArticles}
-                        disabled={loading}
+                        onClick={showLessArticles}
                     >
                         <Text
                             className={inter.className}
@@ -205,54 +260,9 @@ export function OthersArticles() {
                             lineHeight="24px"
                             color="#005257"
                         >
-                            Ver mais
+                            Ver menos
                         </Text>
                     </Button>
-                ) : (
-                    <>
-                        <Button
-                            w="163px"
-                            h="56px"
-                            borderRadius="140px"
-                            borderWidth={1}
-                            bg="white"
-                            borderColor="#005257"
-                            _focus={{ bg: "white" }}
-                            onClick={loadMoreArticles}
-                            disabled={loading}
-                            mb={4}
-                        >
-                            <Text
-                                className={inter.className}
-                                fontWeight={500}
-                                fontSize="16px"
-                                lineHeight="24px"
-                                color="#005257"
-                            >
-                                Ver mais
-                            </Text>
-                        </Button>
-                        <Button
-                            w="163px"
-                            h="56px"
-                            borderRadius="140px"
-                            borderWidth={1}
-                            bg="white"
-                            borderColor="#005257"
-                            _focus={{ bg: "white" }}
-                            onClick={showLessArticles}
-                        >
-                            <Text
-                                className={inter.className}
-                                fontWeight={500}
-                                fontSize="16px"
-                                lineHeight="24px"
-                                color="#005257"
-                            >
-                                Ver menos
-                            </Text>
-                        </Button>
-                    </>
                 )}
             </Flex>
         </Flex>
