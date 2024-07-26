@@ -18,7 +18,7 @@ export function SideBar (){
         py={2}
         borderBottom={asPath === "/" ? "1px solid #005257" : ""}
       >
-        <Text>Home</Text>
+        <Text>Test</Text>
       </ChakraLink>
       <ChakraLink
         onClick={() => {
@@ -30,7 +30,7 @@ export function SideBar (){
         py={2}
         borderBottom={asPath === "/projetos" ? "1px solid #005257" : ""}
       >
-        <Text>Projetos</Text>
+        <Text>Test</Text>
       </ChakraLink>
       <ChakraLink
         onClick={() => {
@@ -42,7 +42,7 @@ export function SideBar (){
         py={2}
         borderBottom={asPath === "/integrantes" ? "1px solid #005257" : ""}
       >
-        <Text>Integrantes</Text>
+        <Text>Test</Text>
       </ChakraLink>
 
     </VStack>

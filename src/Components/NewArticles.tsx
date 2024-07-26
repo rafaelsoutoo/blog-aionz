@@ -7,13 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import {
-    Navigation,
-    Pagination,
-    Mousewheel,
-    Keyboard,
-    Autoplay,
-} from 'swiper/modules';
+import { Pagination, } from 'swiper/modules';
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { ArticleDTO } from "@/dtos/ArticleDTO";
@@ -27,6 +21,7 @@ const StyledSwiper = styled(Swiper)`
         align-items: center;
         width: 100%;  
         height: 600px;
+        
 
 
     }
@@ -72,7 +67,7 @@ export function NewArticles() {
                 const recentArticles = sortedArticles.slice(0, 3);
                 setArticles(recentArticles);
             } catch (error) {
-                console.error( error);
+                console.error(error);
             }
         };
         fetchArticles();
@@ -83,15 +78,15 @@ export function NewArticles() {
             {isBaseOrSm ? (
                 <Flex mt={100} width="100%" justify="center">
                     <StyledSwiper
-                        pagination={{ clickable: true }}
-                        modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
+                        pagination={true}
+                        modules={[Pagination]}
                         centeredSlides={true}
                         slidesPerView={1}
                         spaceBetween={5}
                         style={{ width: "100%", height: 'auto' }}
                     >
 
-                        {articles.map((article, index) => (
+                        {articles.map((article) => (
                             <SwiperSlide >
                                 <Box
                                     w={{ base: "60%", sm: "50%" }}
@@ -117,7 +112,7 @@ export function NewArticles() {
                                         position="absolute"
                                         bottom="0"
                                         left="0"
-                                        style={{ borderRadius: '24px' }}
+                                        style={{ borderEndEndRadius: '24px', borderEndStartRadius: '24px' }}
                                         draggable="false"
                                     />
 

@@ -166,8 +166,6 @@ export function OthersArticles() {
                                         transition: 'width 0.3s',
                                     }}
                                     as="a"
-                                    href={article.url}
-                                    target="_blank"
                                 >
                                     <Text
                                         className={inter.className}
