@@ -80,7 +80,7 @@ export function NewArticles() {
     return (
         <>
             {isLoading ? (
-                <Flex justify="center" align="center" height="100vh">
+                <Flex justify="center" align="center" h="500px">
                     <Spinner size="xl" />
                 </Flex>
             ) : isBaseOrSm ? (
