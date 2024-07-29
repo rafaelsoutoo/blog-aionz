@@ -1,12 +1,24 @@
-## Getting Started
+# Aionz Blog
 
-First, run the development server:
+### Cloning the Repository
+
+To get started, clone this repository to your local machine using the following command:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/rafaelsoutoo/blog-aionz.git
+```
+Installing Dependencies
+After cloning the repository, navigate to the project directory and install the necessary dependencies. You can use npm, yarn, or pnpm:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+cd aionz-blog
+```
+
+```bash
+npm install
+# ou
+yarn install
+# ou
+pnpm install
+````
+Open http://localhost:3000 in your browser to see the result.
