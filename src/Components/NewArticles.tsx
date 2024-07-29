@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import { Pagination } from 'swiper/modules';
+import { Pagination, Autoplay } from 'swiper/modules';
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
 import { ArticleDTO } from "@/dtos/ArticleDTO";
@@ -86,7 +86,11 @@ export function NewArticles() {
                 <Flex mt={100} width="100%" justify="center">
                     <StyledSwiper
                         pagination={true}
-                        modules={[Pagination]}
+                        autoplay={{
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        }}
+                        modules={[Pagination, Autoplay]}
                         centeredSlides={true}
                         slidesPerView={1}
                         spaceBetween={5}
