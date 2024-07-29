@@ -11,7 +11,6 @@ export function NewsLetter() {
 
     const validate = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-
     const handleSubscribe = () => {
         const val = validate(email)
         if (email && val === true) {
@@ -19,7 +18,7 @@ export function NewsLetter() {
                 title: 'E-mail enviado com sucesso.',
                 description: email,
                 status: 'success',
-                duration: 9000,
+                duration: 5000,
                 isClosable: true,
             });
             setEmail('');
@@ -28,7 +27,7 @@ export function NewsLetter() {
                 title: 'Erro ao enviar e-mail.',
                 description: 'Por favor, insira um e-mail válido.',
                 status: 'error',
-                duration: 6000,
+                duration: 5000,
                 isClosable: true,
             });
         }

@@ -22,9 +22,7 @@ export function Footer() {
                 h="100%"
                 minH="678px"
                 bg="#023535"
-                //justifyContent="center"
                 alignItems="center"
-                //p={10}
                 direction="column"
             >
                 <SimpleGrid
@@ -193,7 +191,7 @@ export function Footer() {
                                 <HStack >
 
 
-                                    <Image src="WhatsIcon.svg"  />
+                                    <Image src="WhatsIcon.svg"  display={{base: 'none', sm: 'none', md: 'flex'}}/>
                                     <Text _hover={{ color: "#29e529" }} cursor="default" mb={{ base: 5, sm: 5, md: 0, lg: 0 }} className={inter.className} fontSize="16px" lineHeight="24px" color="#FCFCFC">Fale com a equipe</Text>
                                 </HStack>
                             </Flex>
@@ -265,6 +263,7 @@ export function Footer() {
                             fontSize="16px"
                             lineHeight="24px"
                             color="#FCFCFC"
+                            mr={{base: 0, sm: 0 , md: 0, lg: 120}}
                         >
                             Políticas de Privacidade
                         </Text>

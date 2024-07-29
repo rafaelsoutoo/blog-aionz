@@ -28,7 +28,7 @@ export function SideBar (){
         w="100%"
         px={4}
         py={2}
-        borderBottom={asPath === "/projetos" ? "1px solid #005257" : ""}
+        borderBottom={asPath === "/as" ? "1px solid #005257" : ""}
       >
         <Text>Test</Text>
       </ChakraLink>
@@ -40,7 +40,7 @@ export function SideBar (){
         w="100%"
         px={4}
         py={2}
-        borderBottom={asPath === "/integrantes" ? "1px solid #005257" : ""}
+        borderBottom={asPath === "/as" ? "1px solid #005257" : ""}
       >
         <Text>Test</Text>
       </ChakraLink>
